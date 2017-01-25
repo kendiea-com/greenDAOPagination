@@ -20,7 +20,7 @@ which results the records for first page(Where is 1 is the pageNumber).
 <code>userDAOPagination.getRecordsForPage(1); //  ==> Returns Records 1 to 10</code> <br>
 <code>userDAOPagination.getRecordsForPage(2); //  ==> Returns Records 11 to 20</code> 
 
-<image src="userDAOService.png" ></image> 
+<image src="userDAOService.png" ></image> <br>
 Basic useful feature list:
 
  * You can define the the number of items per page.
