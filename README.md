@@ -1,7 +1,7 @@
 # greenDAOPagination Service
 
 ### Purpose:
-To get the items from dao object in pagination in single line.<br>
+This greenDAO pagination service is to get the items from dao object in pagination in single line.<br>
 Example<br>
 `userDAOPagination.getRecordsForPage(1);` <br>
 which results the records for first page(Where is 1 is the pageNumber).
