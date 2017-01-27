@@ -19,9 +19,9 @@ public class GreenDAODataPaginationService {
         try {
             this.yourDAOClass = yourDAOClass;
             this.yourDAOObject = yourDAOObject;
-            this.setItems_per_page(items_per_page);
+            this.items_per_page = items_per_page;
             total_items = (long)yourDAOClass.getMethod("count").invoke(yourDAOClass.cast(yourDAOObject),null);
-            setTotal_pages((int) (total_items / items_per_page));
+            total_pages = ((int) (total_items / items_per_page));
         }catch (Exception nsm){
             nsm.printStackTrace();
         }
@@ -31,30 +31,19 @@ public class GreenDAODataPaginationService {
     /** One Based index
      *
      * @param pageNumber
-     * @return
+     * @return The Items for specified pageNumber with respecting the items_per_page set.
      */
     public ArrayList<Object> getRecordsForPage(int pageNumber)throws Exception {
         if(pageNumber != 0 && pageNumber >0) {
-            return new ArrayList<Object>(((QueryBuilder<Object>) yourDAOClass.getMethod("queryBuilder").invoke(yourDAOClass.cast(yourDAOObject), null)).offset(getItems_per_page() * (pageNumber - 1)).limit(getItems_per_page()).list());
+            return new ArrayList<Object>(((QueryBuilder<Object>) yourDAOClass.getMethod("queryBuilder").invoke(yourDAOClass.cast(yourDAOObject), null)).offset(items_per_page * (pageNumber - 1)).limit(items_per_page).list());
         }
         else {
             throw new Exception("PageNumber should be positive and index from 1");
         }
     }
-
-    public int getItems_per_page() {
-        return items_per_page;
-    }
-
-    public void setItems_per_page(int items_per_page) {
-        this.items_per_page = items_per_page;
-    }
-
+    
     public int getTotal_pages() {
         return total_pages;
     }
-
-    public void setTotal_pages(int total_pages) {
-        this.total_pages = total_pages;
-    }
+    
 }
