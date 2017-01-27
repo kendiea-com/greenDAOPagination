@@ -4,7 +4,7 @@ import org.greenrobot.greendao.query.QueryBuilder;
 import java.util.ArrayList;
 
 /**
- * Created by Nagender Bojjawar on 24/01/17.
+ * Created by Nagender B on 24/01/17.
  */
 
 public class GreenDAODataPaginationService {
@@ -40,7 +40,6 @@ public class GreenDAODataPaginationService {
         else {
             throw new Exception("PageNumber should be positive and index from 1");
         }
-        //return new ArrayList<Object>(yourDAOClass.cast(yourDAOObject).queryBuilder().offset(items_per_page*(pageNumber-1)).limit(items_per_page).list());
     }
 
     public int getItems_per_page() {
