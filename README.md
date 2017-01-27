@@ -17,7 +17,7 @@ which results the records for first page(Where is 1 is the pageNumber).
             // This prints the first userID
             System.out.println(((User)users.get(0)).getUserID());
 ```
-Example:
+<h3>Example: </h3>
 
 Lets take you have a userDAO object referring table like below <br>
 <image src="userDAOService.png" ></image> <br>
