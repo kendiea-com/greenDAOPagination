@@ -17,12 +17,19 @@ which results the records for first page(Where is 1 is the pageNumber).
             // This prints the first userID
             System.out.println(((User)users.get(0)).getUserID());
 ```
+Example:
+
+Lets take you have a userDAO object referring table like below <br>
+<image src="userDAOService.png" ></image> <br>
+Then<br>
+To paginate through this table with 10 items per page<br>
+<b>Step1:&nbsp;</b><code>GreenDAODataPaginationService userDAOPagination = new GreenDAODataPaginationService(userDao,10,userDao.class);</code><br>
+<b>Step2:</b>
 <code>userDAOPagination.getRecordsForPage(1); //  ==> Returns Records 1 to 10</code> <br>
 <code>userDAOPagination.getRecordsForPage(2); //  ==> Returns Records 11 to 20</code> 
+<br>
+<h3>Basic useful feature list:</h3>
 
-<image src="userDAOService.png" ></image> <br>
-Basic useful feature list:
-
- * You can define the the number of items per page.
- * Get the items by specifying the page Number.
+ <li> You can define the the number of items per page.</li>
+ <li> Get the items by specifying the page Number.</li>
 
